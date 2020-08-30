@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import { Form } from 'react-bootstrap';
+import {InputGroup} from 'react-bootstrap';
+import {FormControl} from 'react-bootstrap';
 
 class addLaptops extends Component {
   constructor(props) {
@@ -89,43 +91,64 @@ onchangeQuantity(e) {
 
   render() {
     return (
-        <div className="container">
+      <div className="container">
         <div style={{ marginTop: 25 }} align="left">
           <h3 align="center">Add product</h3>
             <Form style={{ marginTop:50}} onSubmit={this.saveProduct}>
+           
                 <Form.Group controlId="BasicUpdateForm">
-                        <Form.Label>Select Image: </Form.Label>
-                <Form.Control type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImgUrl}/>
+                   <Form.Label>Select Image: </Form.Label>
+                      <InputGroup className="col-md-7">
+                          <FormControl type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImgUrl}/>
+                      </InputGroup>
                 </Form.Group>
-                <Form.Group controlId="BasicUpdateForm">
-                        <Form.Label>Item Name: </Form.Label>
-                        <Form.Control type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
-                </Form.Group>   
-                <Form.Group controlId="BasicUpdateForm">
-                        <Form.Label>Unit Price: </Form.Label>
-                        <Form.Control type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
-                </Form.Group>   
-                <Form.Group controlId="BasicUpdateForm">
-                <Form.Label>Brand:</Form.Label>
-                    <Form.Control type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
-                </Form.Group> 
-                <Form.Group controlId="BasicUpdateForm">
-                <Form.Label>Code:</Form.Label>
-                    <Form.Control type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
-                </Form.Group>    
-                <Form.Group controlId="BasicUpdateForm">
-                <Form.Label>Warranty:</Form.Label>
-                    <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
-                </Form.Group>
-                <Form.Group controlId="BasicUpdateForm">
-                <Form.Label>Quantity:</Form.Label>
-                    <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
-                </Form.Group>       
-                        <input type ="submit" value="Update Product" className = "btn btn-primary"/>
 
+                <Form.Group controlId="BasicUpdateForm">
+                   <Form.Label>Item Name: </Form.Label>
+                     <InputGroup className="col-md-7">
+                         <Form.Control type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                     </InputGroup>
+                </Form.Group>  
+
+                <Form.Group controlId="BasicUpdateForm">
+                   <Form.Label>Unit Price: </Form.Label>
+                     <InputGroup className="col-md-7">
+                         <Form.Control type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                     </InputGroup>
+                </Form.Group>   
+
+                <Form.Group controlId="BasicUpdateForm">
+                   <Form.Label>Brand:</Form.Label>
+                     <InputGroup className="col-md-7">
+                       <Form.Control type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                     </InputGroup>
+                </Form.Group> 
+
+                <Form.Group controlId="BasicUpdateForm">
+                   <Form.Label>Code:</Form.Label>
+                     <InputGroup className="col-md-7">
+                       <Form.Control type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                     </InputGroup>
+                </Form.Group>  
+
+                <Form.Group controlId="BasicUpdateForm">
+                  <Form.Label>Warranty:</Form.Label>
+                    <InputGroup className="col-md-7">
+                      <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                    </InputGroup>
+                </Form.Group>
+
+                <Form.Group controlId="BasicUpdateForm">
+                  <Form.Label>Quantity:</Form.Label>
+                    <InputGroup className="col-md-7">
+                      <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                    </InputGroup>
+                </Form.Group>      
+
+                <input type ="submit" value="Update Product" className = "btn btn-primary"/>
             </Form>
         </div>
-    </div>
+      </div>
     );
   }
 }
