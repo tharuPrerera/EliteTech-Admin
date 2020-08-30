@@ -86,42 +86,42 @@ class Update extends Component {
 
     render() {
         return (
-            <div style={{ marginTop:25}} align="center">
+        <div className="container">
+          <div className="col">
+            <div style={{ marginTop:20}} align="left">
               <h3 align="center">Update product</h3>
-                <Form style={{ marginTop:50}} onSubmit={this.onSubmit}>
-                    <div className ="form-group">
-                        <img src={this.state.imgUrl}/>
-                        <label>Select Image: </label>
-                        <input type="Buffer" className="from-control"  onChange={this.onChangeImage}/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Item Name: </label>
-                        <input type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Unit Price: </label>
-                        <input type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Brand: </label>
-                        <input type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Code: </label>
-                        <input type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Warranty: </label>
-                        <input type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
-                    </div>
-                    <div className ="form-group">
-                        <label>Quantity: </label>
-                        <input type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
-                    </div>
-                    <div className ="form-group">
+                <Form style={{ marginTop:35}} onSubmit={this.onSubmit}>
+                <Form.Group controlId="BasicUpdateForm">
+                <img src={this.state.imgUrl} onChange={this.onChangeImage}/>
+                </Form.Group>
+                <Form.Group controlId="BasicUpdateForm">
+                        <Form.Label>Item Name: </Form.Label>
+                        <Form.Control type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                </Form.Group>   
+                <Form.Group controlId="BasicUpdateForm">
+                        <Form.Label>Unit Price: </Form.Label>
+                        <Form.Control type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                </Form.Group>   
+                <Form.Group controlId="BasicUpdateForm">
+                <Form.Label>Brand:</Form.Label>
+                    <Form.Control type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                </Form.Group> 
+                <Form.Group controlId="BasicUpdateForm">
+                <Form.Label>Code:</Form.Label>
+                    <Form.Control type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                </Form.Group>    
+                <Form.Group controlId="BasicUpdateForm">
+                <Form.Label>Warranty:</Form.Label>
+                    <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                </Form.Group>
+                <Form.Group controlId="BasicUpdateForm">
+                <Form.Label>Quantity:</Form.Label>
+                    <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                </Form.Group>       
                         <input type ="submit" value="Update Product" className = "btn btn-primary"/>
-                    </div>
                 </Form>
+            </div>
+            </div>
             </div>
         )
     }
