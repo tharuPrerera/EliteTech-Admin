@@ -92,6 +92,7 @@ class Update extends Component {
               <h3 align="center">Update product</h3>
                 <Form style={{ marginTop:35}} onSubmit={this.onSubmit}>
                 <Form.Group controlId="BasicUpdateForm">
+                        <Form.Label>Select Image: </Form.Label>
                 <img src={this.state.imgUrl} onChange={this.onChangeImage}/>
                 </Form.Group>
                 <Form.Group controlId="BasicUpdateForm">
