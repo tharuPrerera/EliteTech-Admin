@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import TableRow from './ProductTables/TableRow';
+import LaptopTableRow from './ProductTables/LaptopTableRow';
 import {Button} from 'react-bootstrap';
 import {InputGroup} from 'react-bootstrap';
 import {FormControl} from 'react-bootstrap';
@@ -60,13 +60,14 @@ class Laptop extends Component {
      
       tabRow() {
           return this.state.allProducts.map(function(object, i){
-              return<TableRow obj={object} key={i}/>
+              return<LaptopTableRow obj={object} key={i}/>
           });
         }
 
           render() {
               return (
                   <div>
+                      <div style={{ marginTop: 25 }}>
                     <h3 align="center"> Laptop Item List</h3>&nbsp;&nbsp;&nbsp;&nbsp;
                        <div className="input-group mb-3">
                           <InputGroup className="col-md-3">
@@ -99,6 +100,7 @@ class Laptop extends Component {
                               {this.tabRow()}
                           </tbody>
                       </table>
+                  </div>
                   </div>
               )
           }
