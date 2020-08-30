@@ -8,8 +8,8 @@ class NavBar extends Component {
         <nav className="navbar navbar-dark bg-dark">
           <Link to="/">Login</Link>
           <Link to="/Laptop">Laptops</Link>
-          <Link to="/Desktop">Desktops</Link>
           <Link to="/HotDeals">HotDeals</Link>
+          <Link to="/Desktop">Desktops</Link>
           <Link to="/Accessories">Accessories</Link>
         </nav>
       );

@@ -145,7 +145,7 @@ onchangeQuantity(e) {
                     </InputGroup>
                 </Form.Group>      
 
-                <input type ="submit" value="Update Product" className = "btn btn-primary"/>
+                <input type ="submit" value="Add Product" className = "btn btn-primary"/>
             </Form>
         </div>
       </div>
