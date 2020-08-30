@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class TableRow extends Component {
+class LaptopTableRow extends Component {
 
     constructor(props) {
         super(props);
@@ -33,4 +33,4 @@ class TableRow extends Component {
     }
 }
 
-export default TableRow;
+export default LaptopTableRow;
