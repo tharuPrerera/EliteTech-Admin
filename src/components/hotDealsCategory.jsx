@@ -88,7 +88,7 @@ class HotDeals extends Component {
                                 <th>Product ID</th>
                                 {/* <th>Product Image</th> */}
                                 <th>Item Name</th>
-                                <th>Unit Price</th>
+                                <th>Unit Price (Rs:)</th>
                                 <th>Brand</th>
                                 <th>Code</th>
                                 <th>Warranty</th>
