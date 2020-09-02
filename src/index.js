@@ -9,10 +9,15 @@ import Laptop from "./components/laptopCategory";
 import Desktop from "./components/desktopCategory";
 import HotDeals from "./components/hotDealsCategory";
 import Accessories from "./components/accessoriesCategory";
+
 import UpdateLaptopForm from "./components/UpdateProducts/UpdateLaptopItems";
 import AddLaptopProduct from "./components/AddProducts/addLaptops";
+
 import UpdateHotDealsItems from "./components/UpdateProducts/UpdateHotDealsItems";
-import addHotDeals from "./components/AddProducts/addHotDeals";
+import AddHotDeals from "./components/AddProducts/addHotDeals";
+
+import UpdateDesktopItems from "./components/UpdateProducts/UpdateDesktopItems";
+import AddDesktops from "./components/AddProducts/addDesktops";
 
 
 ReactDOM.render(
@@ -29,7 +34,10 @@ ReactDOM.render(
       <Route exact path="/AddProducts/addLaptops" component={AddLaptopProduct}/>
 
       <Route exact path="/UpdateProducts/UpdateHotDealsItems/:id" component={UpdateHotDealsItems}/>
-      <Route exact path="/AddProducts/addHotDeals" component={addHotDeals}/>
+      <Route exact path="/AddProducts/addHotDeals" component={AddHotDeals}/>
+
+      <Route exact path="/UpdateProducts/UpdateDesktopItems/:id" component={UpdateDesktopItems}/>
+      <Route exact path="/AddProducts/addDesktops" component={AddDesktops}/>
       
    </BrowserRouter>,
   document.getElementById('root')
