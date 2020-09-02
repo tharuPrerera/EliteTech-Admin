@@ -25,7 +25,7 @@ class Laptop extends Component {
         let products = data.map((product) => {
             return {
                 _id: product._id,
-                // imgUrl:product.imgUrl,
+                imgUrl:product.imgUrl,
                 itemName: product.itemName,
                 unitPrice: product.unitPrice,
                 brand: product.brand,
@@ -86,7 +86,7 @@ class Laptop extends Component {
                           <thead>
                               <tr>
                                 <th>Product ID</th>
-                                {/* <th>Product Image</th> */}
+                                <th>Product Image</th>
                                 <th>Item Name</th>
                                 <th>Unit Price (Rs:)</th>
                                 <th>Brand</th>
