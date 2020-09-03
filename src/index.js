@@ -19,6 +19,9 @@ import AddHotDeals from "./components/AddProducts/addHotDeals";
 import UpdateDesktopItems from "./components/UpdateProducts/UpdateDesktopItems";
 import AddDesktops from "./components/AddProducts/addDesktops";
 
+import UpdateAccessoriesItems from "./components/UpdateProducts/UpdateAccessoriesItems";
+import AddAccessories from "./components/AddProducts/addAccessories";
+
 
 ReactDOM.render(
     <BrowserRouter>
@@ -38,6 +41,9 @@ ReactDOM.render(
 
       <Route exact path="/UpdateProducts/UpdateDesktopItems/:id" component={UpdateDesktopItems}/>
       <Route exact path="/AddProducts/addDesktops" component={AddDesktops}/>
+
+      <Route exact path="/UpdateProducts/UpdateAccessoriesItems/:id" component={UpdateAccessoriesItems}/>
+      <Route exact path="/AddProducts/addAccessories" component={AddAccessories}/>
       
    </BrowserRouter>,
   document.getElementById('root')
