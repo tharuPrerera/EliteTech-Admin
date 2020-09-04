@@ -18,13 +18,13 @@ class addAccessories extends Component {
   this.saveProduct = this.saveProduct.bind(this);
 
   this.state = {
-      imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:'',
+      imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:'', file:null
   }
 
   }
 
 onChangeImgUrl(e) {
-    this.setState({ imgUrl: e.target.value });
+  this.setState({file:URL.createObjectURL(e.target.files[0]) });
 }
 
 onChangeItemName(e) {
@@ -99,7 +99,8 @@ onchangeQuantity(e) {
                 <Form.Group controlId="BasicUpdateForm">
                    <Form.Label>Select Image: </Form.Label>
                       <InputGroup className="col-md-7">
-                          <FormControl type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImgUrl}/>
+                          <FormControl type="file" className="from-control" onChange={this.onChangeImgUrl}/>
+                          <img src={this.state.file}/>
                       </InputGroup>
                 </Form.Group>
 

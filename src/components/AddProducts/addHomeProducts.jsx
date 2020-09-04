@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 import {InputGroup} from 'react-bootstrap';
 import {FormControl} from 'react-bootstrap';
 
-class addHotDeals extends Component {
+class addHomeProducts extends Component {
   constructor(props) {
     super(props);
     
@@ -61,17 +61,17 @@ onchangeQuantity(e) {
       warranty: this.state.warranty,
       quantity: this.state.quantity,
   };
-    axios.post('http://localhost:5000/api/hotDeals/', obj)
+    axios.post('http://localhost:5000/api/products/', obj)
     .then(res => console.log(res.data));
 
     this.setState({
       imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:''});
 
-    this.props.history.push('/HotDeals')
+    this.props.history.push('/HomeProducts')
   }
 
   componentDidMount() {
-      axios.get('http://localhost:5000/api/hotDeals/')
+      axios.get('http://localhost:5000/api/products/')
         .then(response => {
             this.setState({
               imgUrl: response.data.imgUrl,
@@ -153,4 +153,4 @@ onchangeQuantity(e) {
   }
 }
 
-export default addHotDeals;
+export default addHomeProducts;

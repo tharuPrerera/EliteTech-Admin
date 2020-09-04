@@ -23,7 +23,7 @@ class Update extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/hotDeals/'+this.props.match.params.id)
+        axios.get('http://localhost:5000/api/products/'+this.props.match.params.id)
           .then(response => {
               this.setState({
                 imgUrl: response.data.imgUrl,
@@ -80,10 +80,10 @@ class Update extends Component {
             warranty: this.state.warranty,
             quantity: this.state.quantity,
         };
-         axios.put('http://localhost:5000/api/hotDeals/'+this.props.match.params.id, obj)
+         axios.put('http://localhost:5000/api/products/'+this.props.match.params.id, obj)
          .then(res => console.log(res.data));
 
-         this.props.history.push('/HotDeals')
+         this.props.history.push('/HomeProducts')
     }
 
     render() {
@@ -94,9 +94,12 @@ class Update extends Component {
               <h3 align="center">Update Product</h3>
                <Form style={{ marginTop:35}} onSubmit={this.onSubmit}>
                   
-                <Form.Group controlId="BasicUpdateForm">
-                  <Form.Label>Select Image: </Form.Label>
-                     <img src={this.state.imgUrl} onChange={this.onChangeImage}/>
+               <Form.Group>
+                    <img className="img-thumbnail" style={{width:"150px", height:"150px" }} src={this.state.imgUrl}/>
+                    <InputGroup className="col-md-7">
+                       <Form.Label>Select Image: </Form.Label>
+                       <FormControl type="file" className="from-control" onChange={this.onChangeImage}/>
+                    </InputGroup>     
                 </Form.Group>
 
                 <Form.Group controlId="BasicUpdateForm">

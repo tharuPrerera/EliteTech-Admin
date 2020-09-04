@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import HotDealsTableRow from './ProductTables/HotDealsTableRow';
+import HomeProductsTableRow from './ProductTables/HomeProductsTableRow';
 import {Button} from 'react-bootstrap';
 import {InputGroup} from 'react-bootstrap';
 import {FormControl} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-class HotDeals extends Component {
+class HomeProduct extends Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +19,7 @@ class HotDeals extends Component {
       }
 
     async componentDidMount() {
-        let {data} = await axios.get("http://localhost:5000/api/hotDeals");
+        let {data} = await axios.get("http://localhost:5000/api/products");
         console.log(data);
 
         let products = data.map((product) => {
@@ -60,7 +60,7 @@ class HotDeals extends Component {
      
       tabRow() {
           return this.state.allProducts.map(function(object, i){
-              return<HotDealsTableRow obj={object} key={i}/>
+              return<HomeProductsTableRow obj={object} key={i}/>
           });
         }
 
@@ -68,7 +68,7 @@ class HotDeals extends Component {
               return (
                   <div>
                       <div style={{ marginTop: 25 }}></div>
-                    <h3 align="center"> HotDeals Item List</h3>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h3 align="center"> <u>Product Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
                        <div className="input-group mb-3">
                           <InputGroup className="col-md-3">
                                 <FormControl
@@ -80,7 +80,7 @@ class HotDeals extends Component {
                                 <Button className="btn-info"  type="button" onClick={this.searchProduct}> Search </Button>
                             </InputGroup.Append>
                           </InputGroup>
-                          <Link to={"/AddProducts/addHotDeals"} className="btn btn-primary">Add HotDeals</Link>
+                          <Link to={"/AddProducts/addHomeProducts"} className="btn btn-primary">Add Product</Link>
                         </div>
                       <table className="table table-striped" style={{marginTop:20}}>
                           <thead>
@@ -105,4 +105,4 @@ class HotDeals extends Component {
           }
           }
         
- export default HotDeals;
+ export default HomeProduct;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class HotDealsTableRow extends Component {
+class HomeProductsTableRow extends Component {
 
     constructor(props) {
         super(props);
@@ -10,7 +10,7 @@ class HotDealsTableRow extends Component {
     }
 
     async delete() {
-        await axios.delete('http://localhost:5000/api/hotDeals/'+this.props.obj._id)
+        await axios.delete('http://localhost:5000/api/products/'+this.props.obj._id)
         .catch(err => console.log(err))
     }
 
@@ -18,14 +18,14 @@ class HotDealsTableRow extends Component {
         return (
             <tr>
                 <td>{this.props.obj._id}</td>
-                <td><img className="img-thumbnail" src={this.props.obj.imgUrl}/></td>
+                <td><img className="img-thumbnail" style={{width:"100px", height:"100px" }} src={this.props.obj.imgUrl}/></td>
                 <td>{this.props.obj.itemName}</td>
                 <td>{this.props.obj.unitPrice}</td>
                 <td>{this.props.obj.brand}</td>
                 <td>{this.props.obj.code}</td>
                 <td>{this.props.obj.warranty}</td>
                 <td>{this.props.obj.quantity}</td>
-                <td><Link to={"/UpdateProducts/UpdateHotDealsItems/"+this.props.obj._id} className="btn btn-primary">Update</Link></td>
+                <td><Link to={"/UpdateProducts/UpdateHomeProducts/"+this.props.obj._id} className="btn btn-primary">Update</Link></td>
                 <td><button  onClick={this.delete} className="btn btn-danger">Delete</button></td>
                 {/* <td><Link to={"/ViewProduct/"+this.props.obj._id} className="btn btn-primary">View</Link></td> */}
             </tr>
@@ -33,4 +33,4 @@ class HotDealsTableRow extends Component {
     }
 }
 
-export default HotDealsTableRow;
+export default HomeProductsTableRow;
