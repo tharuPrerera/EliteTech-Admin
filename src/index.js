@@ -9,6 +9,7 @@ import Laptop from "./components/laptopCategory";
 import Desktop from "./components/desktopCategory";
 import HomeProduct from "./components/homeProductCategory";
 import Accessories from "./components/accessoriesCategory";
+import Footer from "./components/Footer";
 
 import UpdateLaptopForm from "./components/UpdateProducts/UpdateLaptopItems";
 import AddLaptopProduct from "./components/AddProducts/addLaptops";
@@ -22,7 +23,10 @@ import AddDesktops from "./components/AddProducts/addDesktops";
 import UpdateAccessoriesItems from "./components/UpdateProducts/UpdateAccessoriesItems";
 import AddAccessories from "./components/AddProducts/addAccessories";
 
-import ViewLaptop from "./components/ViewProducts/laptopCategory";
+import ViewLaptop from "./components/ProductDetails/laptopCategory";
+import ViewDesktop from "./components/ProductDetails/desktopCategory";
+import ViewAccessories from "./components/ProductDetails/accessoriesCategory";
+import ViewHome from "./components/ProductDetails/homeCategory";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -46,8 +50,12 @@ ReactDOM.render(
       <Route exact path="/UpdateProducts/UpdateAccessoriesItems/:id" component={UpdateAccessoriesItems}/>
       <Route exact path="/AddProducts/addAccessories" component={AddAccessories}/>
       
-      <Route exact path="/ViewProducts/laptopCategory/:id" component={ViewLaptop}/>
-
+      <Route exact path="/ProductDetails/laptopCategory/:id" component={ViewLaptop}/>
+      <Route exact path="/ProductDetails/desktopCategory/:id" component={ViewDesktop}/>
+      <Route exact path="/ProductDetails/accessoriesCategory/:id" component={ViewAccessories}/>
+      <Route exact path="/ProductDetails/homeCategory/:id" component={ViewHome}/>
+      
+      <Footer />
    </BrowserRouter>,
   document.getElementById('root')
 );

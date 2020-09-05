@@ -24,6 +24,7 @@ class LaptopTableRow extends Component {
                 <td>{this.props.obj.brand}</td>
                 <td>{this.props.obj.code}</td>
                 <td>{this.props.obj.warranty}</td>
+                <td>{this.props.obj.stock}</td>
                 <td>{this.props.obj.quantity}</td>
                 <td><Link to={"/UpdateProducts/UpdateLaptopItems/"+this.props.obj._id} className="btn btn-primary">Update</Link></td>
                 <td><button  onClick={this.delete} className="btn btn-danger">Delete</button></td>

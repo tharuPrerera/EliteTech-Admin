@@ -13,6 +13,7 @@ class ViewLaptop extends Component {
       brand: "",
       code: "",
       warranty: "",
+      stock:"",
       quantity: "",
     };
   }
@@ -28,6 +29,7 @@ class ViewLaptop extends Component {
           brand: response.data.brand,
           code: response.data.code,
           warranty: response.data.warranty,
+          stock: response.data.stock,
           quantity: response.data.quantity,
         });
       })
@@ -56,12 +58,12 @@ class ViewLaptop extends Component {
               <h3>Rs: {this.state.unitPrice}</h3>&nbsp;&nbsp;
               <h5>Brand: {this.state.brand}</h5>&nbsp;&nbsp;
               <h5>Code: {this.state.code}</h5>&nbsp;&nbsp;
-              <h5>In Stock: </h5>&nbsp;&nbsp;
+              <h5>In Stock: {this.state.stock} </h5>&nbsp;&nbsp;
               <h5>Warranty: {this.state.warranty}</h5>&nbsp;&nbsp;
               <h5>Quantity: {this.state.quantity}</h5>&nbsp;&nbsp;
-            </div>
           </div>
        </div>
+    </div>
 </div>
     );
   }

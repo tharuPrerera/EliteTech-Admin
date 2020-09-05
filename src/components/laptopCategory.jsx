@@ -31,6 +31,7 @@ class Laptop extends Component {
                 brand: product.brand,
                 code: product.code,
                 warranty: product.warranty,
+                stock:product.stock,
                 quantity: product.quantity,
             };
         });
@@ -92,6 +93,7 @@ class Laptop extends Component {
                                 <th>Brand</th>
                                 <th>Code</th>
                                 <th>Warranty</th>
+                                <th>In stock</th>
                                 <th>Quantity</th>
                                 <th colSpan="4">Action</th>
                               </tr>

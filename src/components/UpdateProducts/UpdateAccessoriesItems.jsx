@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Form } from 'react-bootstrap';
 import {InputGroup} from 'react-bootstrap';
 import {FormControl} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 class Update extends Component {
 
@@ -14,11 +15,12 @@ class Update extends Component {
         this.onchangeBrand = this.onchangeBrand.bind(this);
         this.onchangeCode = this.onchangeCode.bind(this);
         this.onchangeWarranty = this.onchangeWarranty.bind(this);
+        this.onchangeStock = this.onchangeStock.bind(this);
         this.onchangeQuantity = this.onchangeQuantity.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            imgUrl:'',  itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:''
+            imgUrl:'',  itemName: '', unitPrice: '', brand:'', code:'', warranty:'', stock:'', quantity:''
         }
     }
 
@@ -32,6 +34,7 @@ class Update extends Component {
                 brand: response.data.brand,
                 code: response.data.code,
                 warranty: response.data.warranty,
+                stock: response.data.stock,
                 quantity: response.data.quantity,
               });
           })
@@ -65,6 +68,10 @@ class Update extends Component {
         this.setState({ warranty: e.target.value });
     }
 
+    onchangeStock(e) {
+        this.setState({ stock: e.target.value });
+    }
+
     onchangeQuantity(e) {
         this.setState({ quantity: e.target.value });
     }
@@ -78,6 +85,7 @@ class Update extends Component {
             brand: this.state.brand,
             code: this.state.code,
             warranty: this.state.warranty,
+            stock:this.state.stock,
             quantity: this.state.quantity,
         };
          axios.put('http://localhost:5000/api/accessories/'+this.props.match.params.id, obj)
@@ -105,45 +113,53 @@ class Update extends Component {
                 <Form.Group>
                   <Form.Label>Item Name: </Form.Label>
                       <InputGroup className="col-md-7">
-                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} />
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group>
                   <Form.Label>Unit Price: </Form.Label>
                       <InputGroup className="col-md-7">    
-                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} />
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group>
                   <Form.Label>Brand:</Form.Label>
                     <InputGroup className="col-md-7"> 
-                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} />
                     </InputGroup>
                 </Form.Group> 
 
                 <Form.Group>
                   <Form.Label>Code:</Form.Label>
                     <InputGroup className="col-md-7">
-                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} />
                     </InputGroup>
                 </Form.Group>    
                   
                 <Form.Group>
                   <Form.Label>Warranty:</Form.Label>
                     <InputGroup className="col-md-7">
-                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty}/>
                     </InputGroup>
                 </Form.Group>
 
                 <Form.Group>
-                <Form.Label>Quantity:</Form.Label>
+                <Form.Label>In Stock:</Form.Label>
                     <InputGroup className="col-md-7">
-                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                       <Form.Control type="String" className="from-control" value={this.state.stock} onChange={this.onchangeStock} />
                     </InputGroup>
                 </Form.Group>  
-                <input type ="submit" value="Update Product" className = "btn btn-primary"/>
+
+                <Form.Group>
+                <Form.Label>Quantity:</Form.Label>
+                    <InputGroup className="col-md-7">
+                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity}/>
+                    </InputGroup>
+                </Form.Group>  
+                <input type ="submit" value="Update Product" className = "btn btn-primary"/>&nbsp;&nbsp;&nbsp;
+                <Link to={"/Accessories"} className="btn btn-danger">Cancel</Link>
                </Form>
             </div>
           </div>
