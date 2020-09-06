@@ -44,7 +44,7 @@ class Update extends Component {
     }
 
     onChangeImage(e) {
-        this.setState({ imgUrl: e.target.files[0], });
+        this.setState({ imgUrl: e.target.value});
     }
 
     onChangeItemName(e) {
@@ -98,14 +98,14 @@ class Update extends Component {
         <div className="container">
           <div className="col">
             <div style={{ marginTop:20}} align="left">
-              <h3 align="center">Update Product</h3>
-               <Form style={{ marginTop:35}} onSubmit={this.onSubmit}>
+              <h3 align="center"><u>Update Product</u></h3>
+               <Form style={{ marginTop:45}} onSubmit={this.onSubmit}>
                   
                 <Form.Group>
-                    <img className="img-thumbnail" style={{width:"150px", height:"150px" }} src={this.state.imgUrl}/>
                     <InputGroup className="col-md-7">
-                       <Form.Label>Select Image: </Form.Label>
-                       <FormControl type="file" className="from-control" onChange={this.onChangeImage}/>
+                       <img className="img-thumbnail" style={{width:"150px", height:"150px" }} src={this.state.imgUrl}/>&nbsp; &nbsp;          
+                       <Form.Label>Image Url: </Form.Label>&nbsp; &nbsp; 
+                       <FormControl type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImage}/>
                     </InputGroup>     
                 </Form.Group>
                        
@@ -152,7 +152,7 @@ class Update extends Component {
                 </Form.Group>  
 
                 <Form.Group>
-                <Form.Label>Quantity:</Form.Label>
+                <Form.Label>No of products available:</Form.Label>
                     <InputGroup className="col-md-7">
                        <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
                     </InputGroup>

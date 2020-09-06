@@ -94,7 +94,7 @@ class Laptop extends Component {
                                 <th>Code</th>
                                 <th>Warranty</th>
                                 <th>In stock</th>
-                                <th>Quantity</th>
+                                <th>No of products available</th>
                                 <th colSpan="4">Action</th>
                               </tr>
                           </thead>

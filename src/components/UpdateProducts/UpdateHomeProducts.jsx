@@ -45,7 +45,6 @@ class Update extends Component {
 
     onChangeImage(e) {
         this.setState({ imgUrl: e.target.value });
-        //console.log(e.target.files[0])
     }
 
     onChangeItemName(e) {
@@ -99,63 +98,63 @@ class Update extends Component {
         <div className="container">
           <div className="col">
             <div style={{ marginTop:20}} align="left">
-              <h3 align="center">Update Product</h3>
-               <Form style={{ marginTop:35}} onSubmit={this.onSubmit}>
+              <h3 align="center"><u>Update product</u></h3>
+               <Form style={{ marginTop:45}} onSubmit={this.onSubmit}>
                   
                <Form.Group>
-                    <img className="img-thumbnail" style={{width:"150px", height:"150px" }} src={this.state.imgUrl}/>
-                    <InputGroup className="col-md-7">
-                       <Form.Label>Select Image: </Form.Label>
-                       <FormControl type="file" className="from-control" onChange={this.onChangeImage}/>
+                    <InputGroup className="col-md-9">
+                       <img className="img-thumbnail" style={{width:"150px", height:"150px" }} src={this.state.imgUrl}/>&nbsp; &nbsp;          
+                       <Form.Label>Image Url: </Form.Label>&nbsp; &nbsp; 
+                       <FormControl type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImage}/>
                     </InputGroup>     
                 </Form.Group>
 
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Item Name: </Form.Label>
-                      <InputGroup className="col-md-7">
-                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                      <InputGroup className="col-md-9">
+                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName}/>
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Unit Price: </Form.Label>
-                      <InputGroup className="col-md-7">    
-                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                      <InputGroup className="col-md-9">    
+                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice}/>
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Brand:</Form.Label>
-                    <InputGroup className="col-md-7"> 
-                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                    <InputGroup className="col-md-9"> 
+                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand}/>
                     </InputGroup>
                 </Form.Group> 
 
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Code:</Form.Label>
-                    <InputGroup className="col-md-7">
-                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                    <InputGroup className="col-md-9">
+                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode}/>
                     </InputGroup>
                 </Form.Group>    
                   
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Warranty:</Form.Label>
-                    <InputGroup className="col-md-7">
-                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                    <InputGroup className="col-md-9">
+                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty}/>
                     </InputGroup>
                 </Form.Group>
 
                 <Form.Group>
                 <Form.Label>In Stock:</Form.Label>
-                    <InputGroup className="col-md-7">
+                    <InputGroup className="col-md-9">
                        <Form.Control type="String" className="from-control" value={this.state.stock} onChange={this.onchangeStock} />
                     </InputGroup>
                 </Form.Group>  
 
                 <Form.Group controlId="BasicUpdateForm">
-                <Form.Label>Quantity:</Form.Label>
-                    <InputGroup className="col-md-7">
-                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                <Form.Label>No of products available:</Form.Label>
+                    <InputGroup className="col-md-9">
+                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} />
                     </InputGroup>
                 </Form.Group>  
 

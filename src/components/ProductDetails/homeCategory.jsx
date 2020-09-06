@@ -60,7 +60,7 @@ class ViewHome extends Component {
               <h5>Code: {this.state.code}</h5>&nbsp;&nbsp;
               <h5>In Stock: {this.state.stock} </h5>&nbsp;&nbsp;
               <h5>Warranty: {this.state.warranty}</h5>&nbsp;&nbsp;
-              <h5>Quantity: {this.state.quantity}</h5>&nbsp;&nbsp;
+              <h5>No of products available: {this.state.quantity}</h5>&nbsp;&nbsp;
           </div>
           <Link to={"/HomeProducts"} className="btn btn-info">Back</Link>
        </div>

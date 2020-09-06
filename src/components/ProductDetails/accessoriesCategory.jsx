@@ -44,7 +44,7 @@ class ViewAccessories extends Component {
   
  <div className="container">
     <div className="row">
-       <div className="col-md-12 col-sm-12"></div>
+       <div className="col-md-12 col-sm-12" style={{ marginTop: 45 }}  align="center"><h2><u>{this.state.itemName}</u></h2></div>
        <div className="col-md-6 col-sm-12">
           <div style={{ marginTop: 50 }} align="center">
              <Form style={{ marginTop: 50 }}>
@@ -54,13 +54,12 @@ class ViewAccessories extends Component {
        </div>
        <div className="col-md-6 col-sm-12">
           <div style={{ marginTop: 50 }} align="left">
-              <h2>{this.state.itemName}</h2>&nbsp;
               <h3>Rs: {this.state.unitPrice}</h3>&nbsp;&nbsp;
               <h5>Brand: {this.state.brand}</h5>&nbsp;&nbsp;
               <h5>Code: {this.state.code}</h5>&nbsp;&nbsp;
               <h5>In Stock: {this.state.stock} </h5>&nbsp;&nbsp;
               <h5>Warranty: {this.state.warranty}</h5>&nbsp;&nbsp;
-              <h5>Quantity: {this.state.quantity}</h5>&nbsp;&nbsp;
+              <h5>No of products available: {this.state.quantity}</h5>&nbsp;&nbsp;
           </div>
           <Link to={"/Accessories"} className="btn btn-info">Back</Link>
        </div>

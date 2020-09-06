@@ -20,13 +20,13 @@ class addAccessories extends Component {
   this.saveProduct = this.saveProduct.bind(this);
 
   this.state = {
-      imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', stock:'', quantity:'', file:null
+      imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', stock:'', quantity:'',
   }
 
   }
 
 onChangeImgUrl(e) {
-  this.setState({file:URL.createObjectURL(e.target.files[0]) });
+  this.setState({ imgUrl: e.target.value });
 }
 
 onChangeItemName(e) {
@@ -101,14 +101,13 @@ onchangeQuantity(e) {
     return (
       <div className="container">
         <div style={{ marginTop: 25 }} align="left">
-          <h3 align="center">Add product</h3>
+          <h3 align="center"><u>Add product</u></h3>
             <Form style={{ marginTop:50}} onSubmit={this.saveProduct}>
            
                 <Form.Group controlId="BasicUpdateForm">
-                   <Form.Label>Select Image: </Form.Label>
+                   <Form.Label>Image Url: </Form.Label>
                       <InputGroup className="col-md-7">
-                          <FormControl type="file" className="from-control" onChange={this.onChangeImgUrl}/>
-                          <img src={this.state.file}/>
+                          <FormControl type="String" className="from-control" onChange={this.onChangeImgUrl}/>
                       </InputGroup>
                 </Form.Group>
 
@@ -155,7 +154,7 @@ onchangeQuantity(e) {
                 </Form.Group>  
 
                 <Form.Group controlId="BasicUpdateForm">
-                  <Form.Label>Quantity:</Form.Label>
+                  <Form.Label>No of products available:</Form.Label>
                     <InputGroup className="col-md-7">
                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity}/>
                     </InputGroup>

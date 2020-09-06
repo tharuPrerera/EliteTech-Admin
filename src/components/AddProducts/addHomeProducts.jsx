@@ -101,11 +101,11 @@ onchangeQuantity(e) {
     return (
       <div className="container">
         <div style={{ marginTop: 25 }} align="left">
-          <h3 align="center">Add product</h3>
+          <h3 align="center"><u>Add product</u></h3>
             <Form style={{ marginTop:50}} onSubmit={this.saveProduct}>
            
                 <Form.Group controlId="BasicUpdateForm">
-                   <Form.Label>Select Image: </Form.Label>
+                   <Form.Label>Image URL: </Form.Label>
                       <InputGroup className="col-md-7">
                           <FormControl type="String" className="from-control" value={this.state.imgUrl} onChange={this.onChangeImgUrl}/>
                       </InputGroup>
@@ -154,7 +154,7 @@ onchangeQuantity(e) {
                 </Form.Group>  
 
                 <Form.Group controlId="BasicUpdateForm">
-                  <Form.Label>Quantity:</Form.Label>
+                  <Form.Label>No of products available:</Form.Label>
                     <InputGroup className="col-md-7">
                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
                     </InputGroup>
