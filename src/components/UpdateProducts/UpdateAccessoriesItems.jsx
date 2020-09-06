@@ -92,6 +92,10 @@ class Update extends Component {
          .then(res => console.log(res.data));
 
          this.props.history.push('/Accessories')
+         
+         .catch(function (error) {
+            console.log(error);
+        })
     }
 
     render() {
@@ -158,6 +162,7 @@ class Update extends Component {
                        <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity}/>
                     </InputGroup>
                 </Form.Group>  
+                
                 <input type ="submit" value="Update Product" className = "btn btn-primary"/>&nbsp;&nbsp;&nbsp;
                 <Link to={"/Accessories"} className="btn btn-danger">Cancel</Link>
                </Form>

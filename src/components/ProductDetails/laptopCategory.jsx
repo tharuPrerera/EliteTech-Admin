@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Form } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 class ViewLaptop extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class ViewLaptop extends Component {
               <h5>Warranty: {this.state.warranty}</h5>&nbsp;&nbsp;
               <h5>Quantity: {this.state.quantity}</h5>&nbsp;&nbsp;
           </div>
+          <Link to={"/Laptop"} className="btn btn-info">Back</Link>
        </div>
     </div>
 </div>

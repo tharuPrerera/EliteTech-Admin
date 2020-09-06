@@ -10,11 +10,11 @@ class Laptop extends Component {
 
     constructor(props) {
         super(props);
-        this.searchProduct = this.searchProduct.bind(this);
+        // this.searchProduct = this.searchProduct.bind(this);
 
         this.state = {
             allProducts: [],
-            searchProduct: ''
+            //searchProduct: ''
           };
       }
 
@@ -39,25 +39,25 @@ class Laptop extends Component {
         this.setState({allProducts: products});
     }
 
-      async searchProduct() {
-        let {data} = await axios.get('http://localhost:5000/api/laptop/'+this.props.match.params.id);
-        console.log(data);
+    //   async searchProduct() {
+    //     let {data} = await axios.get('http://localhost:5000/api/laptop/'+this.props.match.params.id);
+    //     console.log(data);
        
-        let products = data.map((product) => {
-            return {
-                _id: product._id,
-                imgUrl:product.imgUrl,
-                itemName: product.itemName,
-                unitPrice: product.unitPrice,
-                brand: product.brand,
-                code: product.code,
-                warranty: product.warranty,
-                quantity: product.quantity,
-            };
-        });
+    //     let products = data.map((product) => {
+    //         return {
+    //             _id: product._id,
+    //             imgUrl:product.imgUrl,
+    //             itemName: product.itemName,
+    //             unitPrice: product.unitPrice,
+    //             brand: product.brand,
+    //             code: product.code,
+    //             warranty: product.warranty,
+    //             quantity: product.quantity,
+    //         };
+    //     });
 
-        this.setState({allProducts: products});
-      }
+    //     this.setState({allProducts: products});
+    //   }
      
       tabRow() {
           return this.state.allProducts.map(function(object, i){

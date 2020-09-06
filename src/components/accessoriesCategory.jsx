@@ -10,11 +10,11 @@ class Desktop extends Component {
 
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this)
+        //this.handleChange = this.handleChange.bind(this)
 
         this.state = {
             allProducts: [],
-            filtered: []
+            // filtered: []
           };
       }
 
@@ -39,57 +39,6 @@ class Desktop extends Component {
         this.setState({allProducts: products});
     }
 
-    // async searchItem() {
-    //     let {data} = await axios.get('http://localhost:5000/api/accessories/'+this.props.match.params.id);
-    //     console.log(data);
-
-    //     this.setState({
-    //       filtered: this.props.items
-    //     });
-    //   }
-      
-    // async componentWillReceiveProps(nextProps) {
-    //     let {data} = await axios.get('http://localhost:5000/api/accessories/'+this.props.match.params.id);
-    //     console.log(data);
-
-    // this.setState({
-    //     filtered: nextProps.items
-    //    });
-    // }
-    
-    handleChange(e) {
-		// Variable to hold the original version of the list
-    let currentList = [];
-		// Variable to hold the filtered list before putting into state
-    let newList = [];
-
-		// If the search bar isn't empty
-    if (e.target.value !== "") {
-			// Assign the original list to currentList
-      currentList = this.props.items;
-
-			// Use .filter() to determine which items should be displayed
-			// based on the search terms
-      newList = currentList.filter(item => {
-				// change current item to lowercase
-        const lc = item.toLowerCase();
-				// change search term to lowercase
-        const filter = e.target.value.toLowerCase();
-				// check to see if the current list item includes the search term
-				// If it does, it will be added to newList. Using lowercase eliminates
-				// issues with capitalization in search terms and search content
-        return lc.includes(filter);
-      });
-    } else {
-			// If the search bar is empty, set newList to original task list
-      newList = this.props.items;
-    }
-		// Set the filtered state based on what our rules added to newList
-    this.setState({
-      filtered: newList
-    });
-  }
-
     tabRow() {
         return this.state.allProducts.map(function(object, i){
             return<AccessoriesTableRow obj={object} key={i}/>
@@ -101,8 +50,19 @@ class Desktop extends Component {
                   <div>
                       <div style={{ marginTop: 25 }}>
                       <h3 align="center"><u> Accessories Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
-                       <div className="input-group mb-3">
-                          <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />&nbsp;&nbsp;&nbsp;
+                       {/* <div className="input-group mb-3">
+                          <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />&nbsp;&nbsp;&nbsp; */}
+                          <div className="input-group mb-3">
+                          <InputGroup className="col-md-3">
+                                <FormControl
+                                    placeholder="Search Product"
+                                    aria-label="Search Product"
+                                    aria-describedby="basic-addon2"
+                                />
+                            <InputGroup.Append>
+                                <Button className="btn-info"  type="button" onClick={this.searchProduct}> Search </Button>
+                            </InputGroup.Append>
+                          </InputGroup>
                           <Link to={"/AddProducts/addAccessories"} className="btn btn-primary">Add Accessories</Link> 
                        </div>
                       <table className="table table-striped" style={{marginTop:20}}>
