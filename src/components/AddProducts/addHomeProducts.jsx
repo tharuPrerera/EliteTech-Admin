@@ -114,35 +114,35 @@ onchangeQuantity(e) {
                 <Form.Group controlId="BasicUpdateForm">
                    <Form.Label>Item Name: </Form.Label>
                      <InputGroup className="col-md-7">
-                         <Form.Control type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                         <Form.Control type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} />
                      </InputGroup>
                 </Form.Group>  
 
                 <Form.Group controlId="BasicUpdateForm">
                    <Form.Label>Unit Price: </Form.Label>
                      <InputGroup className="col-md-7">
-                         <Form.Control type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                         <Form.Control type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} />
                      </InputGroup>
                 </Form.Group>   
 
                 <Form.Group controlId="BasicUpdateForm">
                    <Form.Label>Brand:</Form.Label>
                      <InputGroup className="col-md-7">
-                       <Form.Control type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                       <Form.Control type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} />
                      </InputGroup>
                 </Form.Group> 
 
                 <Form.Group controlId="BasicUpdateForm">
                    <Form.Label>Code:</Form.Label>
                      <InputGroup className="col-md-7">
-                       <Form.Control type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                       <Form.Control type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} />
                      </InputGroup>
                 </Form.Group>  
 
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>Warranty:</Form.Label>
                     <InputGroup className="col-md-7">
-                      <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                      <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} />
                     </InputGroup>
                 </Form.Group>
 
@@ -156,7 +156,7 @@ onchangeQuantity(e) {
                 <Form.Group controlId="BasicUpdateForm">
                   <Form.Label>No of products available:</Form.Label>
                     <InputGroup className="col-md-7">
-                      <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                      <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity}/>
                     </InputGroup>
                 </Form.Group>      
 

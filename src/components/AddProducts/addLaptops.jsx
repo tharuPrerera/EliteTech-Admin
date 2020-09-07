@@ -23,7 +23,7 @@ class addLaptops extends Component {
       imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', stock:'', quantity:'',
   }
 
-  }
+}
 
 onChangeImgUrl(e) {
     this.setState({ imgUrl: e.target.value });

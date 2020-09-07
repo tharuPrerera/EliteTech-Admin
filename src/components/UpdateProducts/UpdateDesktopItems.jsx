@@ -113,35 +113,35 @@ class Update extends Component {
                 <Form.Group>
                   <Form.Label>Item Name: </Form.Label>
                       <InputGroup className="col-md-7">
-                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} required/>
+                           <FormControl type="String" className="from-control" value={this.state.itemName} onChange={this.onChangeItemName} />
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group>
                   <Form.Label>Unit Price: </Form.Label>
                       <InputGroup className="col-md-7">    
-                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice} required/>
+                          <FormControl type="Number" className="from-control" value={this.state.unitPrice} onChange={this.onchangeUnitPrice}/>
                       </InputGroup>
                 </Form.Group>   
 
                 <Form.Group>
                   <Form.Label>Brand:</Form.Label>
                     <InputGroup className="col-md-7"> 
-                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} required/>
+                         <FormControl type="String" className="from-control" value={this.state.brand} onChange={this.onchangeBrand} />
                     </InputGroup>
                 </Form.Group> 
 
                 <Form.Group>
                   <Form.Label>Code:</Form.Label>
                     <InputGroup className="col-md-7">
-                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} required/>
+                         <FormControl type="Number" className="from-control" value={this.state.code} onChange={this.onchangeCode} />
                     </InputGroup>
                 </Form.Group>    
                   
                 <Form.Group>
                   <Form.Label>Warranty:</Form.Label>
                     <InputGroup className="col-md-7">
-                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty} required/>
+                        <Form.Control type="String" className="from-control" value={this.state.warranty} onChange={this.onchangeWarranty}/>
                     </InputGroup>
                 </Form.Group>
 
@@ -155,7 +155,7 @@ class Update extends Component {
                 <Form.Group>
                 <Form.Label>No of products available:</Form.Label>
                     <InputGroup className="col-md-7">
-                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} required/>
+                       <Form.Control type="Number" className="from-control" value={this.state.quantity} onChange={this.onchangeQuantity} />
                     </InputGroup>
                 </Form.Group>  
                 <input type ="submit" value="Update Product" className = "btn btn-primary"/>&nbsp;&nbsp;&nbsp;
