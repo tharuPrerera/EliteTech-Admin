@@ -12,6 +12,7 @@ class LaptopTableRow extends Component {
     async delete() {
         await axios.delete('http://localhost:5000/api/laptop/'+this.props.obj._id)
         .catch(err => console.log(err))
+        window.location.reload();
     }
 
     render() {
