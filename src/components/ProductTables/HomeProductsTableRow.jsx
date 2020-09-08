@@ -29,7 +29,7 @@ class HomeProductsTableRow extends Component {
                 <td>{this.props.obj.quantity}</td>
                 <td><Link to={"/UpdateProducts/UpdateHomeProducts/"+this.props.obj._id} className="btn btn-primary">Update</Link></td>
                 <td><button  onClick={this.delete} className="btn btn-danger">Delete</button></td>
-                {/* <td><Link to={"/ViewProduct/"+this.props.obj._id} className="btn btn-primary">View</Link></td> */}
+                <td><Link to={"/ProductDetails/homeCategory/"+this.props.obj._id} className="btn btn-primary">View</Link></td>
             </tr>
         )
     }
