@@ -38,9 +38,9 @@ class Update extends Component {
                 quantity: response.data.quantity,
               });
           })
-          .catch(function (error) {
-              console.log(error);
-          })
+        //   .catch(function (error) {
+        //       console.log(error);
+        //   })
     }
 
     onChangeImage(e) {

@@ -93,9 +93,9 @@ class Update extends Component {
 
          this.props.history.push('/Accessories')
          
-         .catch(function (error) {
-            console.log(error);
-        })
+        //  .catch(function (error) {
+        //     console.log(error);
+        // })
     }
 
     render() {
