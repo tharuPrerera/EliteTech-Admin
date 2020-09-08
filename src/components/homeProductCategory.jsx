@@ -10,13 +10,42 @@ class HomeProduct extends Component {
 
     constructor(props) {
         super(props);
-        //this.searchProduct = this.searchProduct.bind(this);
+        // this.onChangeSearchTitle  = this.onChangeSearchTitle.bind(this);
+        // this.searchTitle= this.searchTitle.bind(this);
 
         this.state = {
             allProducts: [],
-           // searchProduct: ''
+            //searchTitle:"",
           };
       }
+
+    // onChangeSearchTitle(e) {
+    //       const searchTitle = e.target.value;
+    //       this.setState ({
+    //         searchTitle:searchTitle
+    //       });
+    //   }
+
+    //   searchTitle(e) {
+    //     e.preventDefault ();
+    //     const obj = {
+    //         imgUrl: this.state.imgUrl,
+    //         itemName: this.state.itemName,
+    //         unitPrice: this.state.unitPrice,
+    //         brand: this.state.brand,
+    //         code: this.state.code,
+    //         warranty: this.state.warranty,
+    //         stock:this.state.stock,
+    //         quantity: this.state.quantity,
+    //     };
+    //      axios.get('http://localhost:5000/api/products/'+this.props.match.params._id, obj)
+    //      .then(res => console.log(res.data));
+
+    //      this.setState({
+    //         imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:''});
+
+    //      this.props.history.push('/ProductDetails/homeCategory/'+this.props.match.params.id)
+    // }
 
     async componentDidMount() {
         let {data} = await axios.get("http://localhost:5000/api/products");
@@ -39,25 +68,6 @@ class HomeProduct extends Component {
         this.setState({allProducts: products});
     }
 
-    //   async searchProduct() {
-    //     let {data} = await axios.get('http://localhost:5000/api/hotDeals/'+this.props.match.params.id);
-    //     console.log(data);
-       
-    //     let products = data.map((product) => {
-    //         return {
-    //             _id: product._id,
-    //             imgUrl:product.imgUrl,
-    //             itemName: product.itemName,
-    //             unitPrice: product.unitPrice,
-    //             brand: product.brand,
-    //             code: product.code,
-    //             warranty: product.warranty,
-    //             quantity: product.quantity,
-    //         };
-    //     });
-
-    //     this.setState({allProducts: products});
-    //   }
      
       tabRow() {
           return this.state.allProducts.map(function(object, i){
@@ -66,21 +76,30 @@ class HomeProduct extends Component {
         }
 
           render() {
+            const { searchTitle } = this.state;
               return (
                   <div>
                       <div style={{ marginTop: 25 }}></div>
-                    <h3 align="center"> <u>Product Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
-                       <div className="input-group mb-3">
-                          <InputGroup className="col-md-3">
-                                <FormControl
-                                    placeholder="Search Product"
-                                    aria-label="Search Product"
-                                    aria-describedby="basic-addon2"
-                                />
-                            <InputGroup.Append>
-                                <Button className="btn-info"  type="button" onClick={this.searchProduct}> Search </Button>
-                            </InputGroup.Append>
-                          </InputGroup>
+                    <h3 align="center"> <u>Latest Deals Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <div className="col-md-8">
+                        <div className="input-group mb-3">
+                            <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Search by title"
+                            value={searchTitle}
+                            onChange={this.onChangeSearchTitle}
+                            />
+                        <div className="input-group-append">
+                            <button
+                                className="btn btn-outline-secondary"
+                                type="button"
+                                onClick={this.searchTitle}
+                            >
+                            Search
+                            </button>
+                        </div>
+                       </div>
                           <Link to={"/AddProducts/addHomeProducts"} className="btn btn-primary">Add Product</Link>
                         </div>
                       <table className="table table-striped" style={{marginTop:20}}>

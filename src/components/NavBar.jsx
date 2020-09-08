@@ -27,7 +27,7 @@ function App() {
                 <li className="nav-item active">
                   <a className="nav-link text-white text-uppercase">
                     <Link class="text-light bg-dark" to="/HomeProducts">
-                      Home&nbsp;
+                      Latest Deals &nbsp;
                     </Link>
                     <span class="sr-only">(current)</span>
                   </a>
@@ -61,7 +61,7 @@ function App() {
                 </li>
               </ul>
             </Nav>
-            <Form inline>
+            {/* <Form inline>
               <li className="nav-item active">
                 <Link
                   to="/"
@@ -73,7 +73,7 @@ function App() {
                   SIGN IN{" "}
                 </Link>
               </li>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </Navbar>
       </header>

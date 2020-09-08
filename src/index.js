@@ -4,7 +4,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
-import Login from "./components/login";
+import Home from "./components/Home";
 import Laptop from "./components/laptopCategory";
 import Desktop from "./components/desktopCategory";
 import HomeProduct from "./components/homeProductCategory";
@@ -32,7 +32,7 @@ ReactDOM.render(
     <BrowserRouter>
       <NavBar />
 
-      <Route exact path="/" component={Login}/>
+      <Route exact path="/" component={Home}/>
       <Route exact path="/Laptop" component={Laptop}/>
       <Route exact path="/Desktop" component={Desktop}/>
       <Route exact path="/Accessories" component={Accessories}/>

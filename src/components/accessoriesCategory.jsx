@@ -10,11 +10,9 @@ class Desktop extends Component {
 
     constructor(props) {
         super(props);
-        //this.handleChange = this.handleChange.bind(this)
 
         this.state = {
             allProducts: [],
-            // filtered: []
           };
       }
 
@@ -46,23 +44,30 @@ class Desktop extends Component {
     }
 
           render() {
+            const { searchTitle } = this.state;
               return (
                   <div>
                       <div style={{ marginTop: 25 }}>
                       <h3 align="center"><u> Accessories Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
-                       {/* <div className="input-group mb-3">
-                          <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />&nbsp;&nbsp;&nbsp; */}
-                          <div className="input-group mb-3">
-                          <InputGroup className="col-md-3">
-                                <FormControl
-                                    placeholder="Search Product"
-                                    aria-label="Search Product"
-                                    aria-describedby="basic-addon2"
-                                />
-                            <InputGroup.Append>
-                                <Button className="btn-info"  type="button" onClick={this.searchProduct}> Search </Button>
-                            </InputGroup.Append>
-                          </InputGroup>
+                      <div className="col-md-8">
+                        <div className="input-group mb-3">
+                            <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Search by title"
+                            value={searchTitle}
+                            onChange={this.onChangeSearchTitle}
+                            />
+                        <div className="input-group-append">
+                            <button
+                                className="btn btn-outline-secondary"
+                                type="button"
+                                onClick={this.searchTitle}
+                            >
+                            Search
+                            </button>
+                        </div>
+                       </div>
                           <Link to={"/AddProducts/addAccessories"} className="btn btn-primary">Add Accessories</Link> 
                        </div>
                       <table className="table table-striped" style={{marginTop:20}}>

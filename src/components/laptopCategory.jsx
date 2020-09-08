@@ -10,11 +10,9 @@ class Laptop extends Component {
 
     constructor(props) {
         super(props);
-        // this.searchProduct = this.searchProduct.bind(this);
 
         this.state = {
             allProducts: [],
-            //searchProduct: ''
           };
       }
 
@@ -39,26 +37,6 @@ class Laptop extends Component {
         this.setState({allProducts: products});
     }
 
-    //   async searchProduct() {
-    //     let {data} = await axios.get('http://localhost:5000/api/laptop/'+this.props.match.params.id);
-    //     console.log(data);
-       
-    //     let products = data.map((product) => {
-    //         return {
-    //             _id: product._id,
-    //             imgUrl:product.imgUrl,
-    //             itemName: product.itemName,
-    //             unitPrice: product.unitPrice,
-    //             brand: product.brand,
-    //             code: product.code,
-    //             warranty: product.warranty,
-    //             quantity: product.quantity,
-    //         };
-    //     });
-
-    //     this.setState({allProducts: products});
-    //   }
-     
       tabRow() {
           return this.state.allProducts.map(function(object, i){
               return<LaptopTableRow obj={object} key={i}/>
@@ -66,21 +44,31 @@ class Laptop extends Component {
         }
 
           render() {
+            const { searchTitle } = this.state;
               return (
                   <div>
                       <div style={{ marginTop: 25 }}>
                     <h3 align="center"> <u>Laptop Item List</u></h3>&nbsp;&nbsp;&nbsp;&nbsp;
-                       <div className="input-group mb-3">
-                          <InputGroup className="col-md-3">
-                                <FormControl
-                                    placeholder="Search Product"
-                                    aria-label="Search Product"
-                                    aria-describedby="basic-addon2"
-                                />
-                            <InputGroup.Append>
-                                <Button className="btn-info"  type="button" onClick={this.searchProduct}> Search </Button>
-                            </InputGroup.Append>
-                          </InputGroup>
+                    <div className="col-md-8">
+                        <div className="input-group mb-3">
+                            <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Search by title"
+                            value={searchTitle}
+                            onChange={this.onChangeSearchTitle}
+                            />
+                        <div className="input-group-append">
+                            <button
+                                className="btn btn-outline-secondary"
+                                type="button"
+                                onClick={this.searchTitle}
+                            >
+                            Search
+                            </button>
+                        </div>
+                       </div>
+                     
                           <Link to={"/AddProducts/addLaptops"} className="btn btn-primary">Add Laptop</Link>
                         </div>
                       <table className="table table-striped" style={{marginTop:20}}>
