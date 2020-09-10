@@ -41,6 +41,7 @@ class Update extends Component {
           .catch(function (error) {
               console.log(error);
           })
+         
     }
 
     onChangeImage(e) {

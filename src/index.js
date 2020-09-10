@@ -12,15 +12,13 @@ import Accessories from "./components/accessoriesCategory";
 import Footer from "./components/Footer";
 
 import UpdateLaptopForm from "./components/UpdateProducts/UpdateLaptopItems";
-import AddLaptopProduct from "./components/AddProducts/addLaptops";
-
 import UpdateHomeProducts from "./components/UpdateProducts/UpdateHomeProducts";
-import AddHomeProducts from "./components/AddProducts/addHomeProducts";
-
 import UpdateDesktopItems from "./components/UpdateProducts/UpdateDesktopItems";
-import AddDesktops from "./components/AddProducts/addDesktops";
-
 import UpdateAccessoriesItems from "./components/UpdateProducts/UpdateAccessoriesItems";
+
+import AddLaptopProduct from "./components/AddProducts/addLaptops";
+import AddHomeProducts from "./components/AddProducts/addHomeProducts";
+import AddDesktops from "./components/AddProducts/addDesktops";
 import AddAccessories from "./components/AddProducts/addAccessories";
 
 import ViewLaptop from "./components/ProductDetails/laptopCategory";
@@ -39,15 +37,13 @@ ReactDOM.render(
       <Route exact path="/HomeProducts" component={HomeProduct}/>
 
       <Route exact path="/UpdateProducts/UpdateLaptopItems/:id" component={UpdateLaptopForm}/>
-      <Route exact path="/AddProducts/addLaptops" component={AddLaptopProduct}/>
-
       <Route exact path="/UpdateProducts/UpdateHomeProducts/:id" component={UpdateHomeProducts}/>
-      <Route exact path="/AddProducts/addHomeProducts" component={AddHomeProducts}/>
-
       <Route exact path="/UpdateProducts/UpdateDesktopItems/:id" component={UpdateDesktopItems}/>
-      <Route exact path="/AddProducts/addDesktops" component={AddDesktops}/>
-
       <Route exact path="/UpdateProducts/UpdateAccessoriesItems/:id" component={UpdateAccessoriesItems}/>
+
+      <Route exact path="/AddProducts/addLaptops" component={AddLaptopProduct}/>
+      <Route exact path="/AddProducts/addHomeProducts" component={AddHomeProducts}/>
+      <Route exact path="/AddProducts/addDesktops" component={AddDesktops}/>
       <Route exact path="/AddProducts/addAccessories" component={AddAccessories}/>
       
       <Route exact path="/ProductDetails/laptopCategory/:id" component={ViewLaptop}/>

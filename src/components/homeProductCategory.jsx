@@ -10,42 +10,13 @@ class HomeProduct extends Component {
 
     constructor(props) {
         super(props);
-        // this.onChangeSearchTitle  = this.onChangeSearchTitle.bind(this);
-        // this.searchTitle= this.searchTitle.bind(this);
 
         this.state = {
             allProducts: [],
-            //searchTitle:"",
+        
           };
       }
 
-    // onChangeSearchTitle(e) {
-    //       const searchTitle = e.target.value;
-    //       this.setState ({
-    //         searchTitle:searchTitle
-    //       });
-    //   }
-
-    //   searchTitle(e) {
-    //     e.preventDefault ();
-    //     const obj = {
-    //         imgUrl: this.state.imgUrl,
-    //         itemName: this.state.itemName,
-    //         unitPrice: this.state.unitPrice,
-    //         brand: this.state.brand,
-    //         code: this.state.code,
-    //         warranty: this.state.warranty,
-    //         stock:this.state.stock,
-    //         quantity: this.state.quantity,
-    //     };
-    //      axios.get('http://localhost:5000/api/products/'+this.props.match.params._id, obj)
-    //      .then(res => console.log(res.data));
-
-    //      this.setState({
-    //         imgUrl:'', itemName: '', unitPrice: '', brand:'', code:'', warranty:'', quantity:''});
-
-    //      this.props.history.push('/ProductDetails/homeCategory/'+this.props.match.params.id)
-    // }
 
     async componentDidMount() {
         let {data} = await axios.get("http://localhost:5000/api/products");
